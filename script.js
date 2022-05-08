@@ -92,6 +92,102 @@ let customers = [
 
 console.log(
   customers.find((e) => {
-    return e.credit > 100;
+    return e.credit == 100;
   })
 );
+
+// 11. Array.findIndex() Method
+// This method is similar to the find() method, difference is just it returns the immediate first index of the element for which the condition is truthy.
+// And find() method returns the element itself.
+
+console.log(customers.findIndex((e) => {
+  return e.credit > 200
+}))  // it returns 2 i.e. the element is located at 2nd index.
+
+// 12. Array.map() method
+// This method performs operation on every element of the array and returns a new array with updated elements e.g. : -
+
+const circleRadius = [4, 6, 8, 10]
+
+const circleArea = circleRadius.map((radius) => {
+  return Math.floor(Math.PI * (radius ** 2))
+})
+
+console.table({ circleRadius, circleArea }) // it returns [4, 6, 8, 10] and [50, 113, 201, 314]
+
+// 12. Array.filter() Method
+// This method returns new array of all the elements for which the fucntion returns true e.g.:-
+
+console.table(circleArea.filter(area => area > 200)) // it returns [201, 314]
+
+// 13. Array.reduce() Method
+// This method performs operation on elements of the array and reduces it to 1 value e.g.:-
+
+let shoppingCart = [
+  {
+    product: 'phone',
+    qty: 1,
+    price: 500,
+  },
+  {
+    product: 'Screen Protector',
+    qty: 1,
+    price: 10,
+  },
+  {
+    product: 'Memory Card',
+    qty: 2,
+    price: 20,
+  },
+];
+
+let totalPrice = shoppingCart.reduce((prevValue, currValue) => {
+  return Number(prevValue + currValue.qty * currValue.price)
+}, [0])
+
+console.log(totalPrice)
+
+// 14. Similarly Array.reduceRight() Method
+// This performs the operation on elements from right to left while .reduce() method left to right.
+
+// 15. Array.every() Mehtod
+// This method check the condition for every element of the array for e.g.:-
+// In the below example we check whether every element is Odd or not.
+
+let nums = [1, 3, 5, 10, 12]
+
+let isOdd = nums.every(n => {
+  return Math.abs(n % 2) === 1
+})
+
+console.log(isOdd) // this will return false because every element is not Odd number
+
+// 16. Array.some() Method
+// This method check if atleast one element pass the condition. Same example, let's check if some elements are even or not.
+
+let isEven = nums.some(n => {
+  return Math.abs(n % 2) == 0
+})
+
+console.log(isEven) // will return true because some elements are Even in the array
+
+// 17. Array.sort() Method
+// This method is used to sort elements either in ascending or descending order
+
+let employees = [
+  { name: 'John', salary: 90000, hireDate: "July 1, 2010" },
+  { name: 'David', salary: 75000, hireDate: "August 15, 2009" },
+  { name: 'Ana', salary: 80000, hireDate: "December 12, 2011" }
+];
+
+let sortBySalary = employees.sort((a, b) => {
+  return a.salary - b.salary
+})
+
+let sortByName = employees.sort((a, b) => {
+  let x = a.name.toUpperCase(), y = b.name.toUpperCase();
+  return x == y ? 0 : x > y ? 1 : -1;
+})
+
+console.log('Sort by Salary', sortBySalary);
+console.log('Sort by Name', sortByName)
