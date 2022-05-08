@@ -175,19 +175,38 @@ console.log(isEven) // will return true because some elements are Even in the ar
 // This method is used to sort elements either in ascending or descending order
 
 let employees = [
-  { name: 'John', salary: 90000, hireDate: "July 1, 2010" },
-  { name: 'David', salary: 75000, hireDate: "August 15, 2009" },
-  { name: 'Ana', salary: 80000, hireDate: "December 12, 2011" }
+  { name: 'John', salary: 90000, hireDate: "July 1, 2015" },
+  { name: 'David', salary: 75000, hireDate: "August 15, 2012" },
+  { name: 'Ana', salary: 80000, hireDate: "December 12, 2015" }
 ];
 
-let sortBySalary = employees.sort((a, b) => {
+/* let sortBySalary = employees.sort((a, b) => {
   return a.salary - b.salary
-})
+}) */
 
-let sortByName = employees.sort((a, b) => {
+/* let sortByName = employees.sort((a, b) => {
   let x = a.name.toUpperCase(), y = b.name.toUpperCase();
   return x == y ? 0 : x > y ? 1 : -1;
+}) */
+
+let sortByDate = employees.sort((a, b) => {
+  let x = new Date(a.hireDate), y = new Date(b.hireDate)
+  return x - y
 })
 
-console.log('Sort by Salary', sortBySalary);
-console.log('Sort by Name', sortByName)
+// console.log('Sort by Salary', sortBySalary);
+// console.table(sortByName)
+console.table(sortByDate)
+
+/* employees.forEach((e) => {
+  document.getElementById("tbody").innerHTML = `<tr>
+  <td>${e.name}</td>
+  <td>${e.salary}</td>
+  <td>${e.hireDate}</td>
+  <tr>`
+}) */
+
+// 18. Array.forEach() Method
+// This method perform task on every element of the array and modify the source array, this method is similar to for loop but cannot use break or continue statement.
+
+
