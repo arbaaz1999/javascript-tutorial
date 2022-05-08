@@ -191,6 +191,3 @@ let sortByName = employees.sort((a, b) => {
 
 console.log('Sort by Salary', sortBySalary);
 console.log('Sort by Name', sortByName)
-
-
-// I've also added one more comment
