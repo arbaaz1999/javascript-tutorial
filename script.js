@@ -236,3 +236,6 @@ console.log(alphabets)  // this creates an array of size three ['a', 'b', 'c']
 let arr = Array.from((1, 2, 3), x => x + 1)
 
 console.log(arr)
+
+
+// Changes which i've made right now.
