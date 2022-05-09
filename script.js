@@ -232,3 +232,7 @@ console.log(alphabets)  // this creates an array of size three ['a', 'b', 'c']
 
 // 21. Array.from() Method
 // This method is used to convert array-like object into array.
+ 
+let arr = Array.from((1, 2, 3), x => x + 1)
+
+console.log(arr)
