@@ -210,3 +210,25 @@ console.table(sortByDate)
 // This method perform task on every element of the array and modify the source array, this method is similar to for loop but cannot use break or continue statement.
 
 
+// 19. Array.concat() Method
+// This method is used to merge two arrays without changing the source array for e.g.:-
+
+let upper  = ['A','B','C'];
+let lower  = ['a','b','c'];
+let digits = [1,2,3];
+
+let alphaNumeric = upper.concat(lower, digits)
+
+console.log(alphaNumeric)
+
+// 20. Array.of() Methods introduced in ES6.
+// This method creates an array with the elements which has been passed in the arguments irrespective of their datatypes.
+
+let num = Array.of(3)
+console.log(num) // this creates an array of size 1 and the element is 3
+
+let alphabets = Array.of('a', 'b', 'c')
+console.log(alphabets)  // this creates an array of size three ['a', 'b', 'c']
+
+// 21. Array.from() Method
+// This method is used to convert array-like object into array.
