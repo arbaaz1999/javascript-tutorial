@@ -233,9 +233,41 @@ console.log(alphabets)  // this creates an array of size three ['a', 'b', 'c']
 // 21. Array.from() Method
 // This method is used to convert array-like object into array.
  
-let arr = Array.from((1, 2, 3), x => x + 1)
+let arr = Array.from([1,2,3], x => x + 1)
 
 console.log(arr)
 
+// 22. Array.flat() Method
+// This method is used to flatten nested arrays
 
-// Changes which i've made right now.
+const numb = [1, 2, 3, [4, 5, 6], 7, 8, 9];
+
+/* const flattenedNumb = numb.flat(Infinity)
+
+console.log(flattenedNumb) */
+
+// 23. Array.flatMap() Method
+// This method is used to perform the operation on each element and flatten them as well, for e.g.:-
+
+const numbFlatMaped = numb.flatMap((x) => x * 2)
+console.log(numbFlatMaped)
+
+// Multidimensional Array
+
+let activities = [
+  ['Work', 9],
+  ['Eat', 1],
+  ['Commute', 2],
+  ['Play Game', 1],
+  ['Sleep', 7]
+];
+
+// we can also manipulate multidimensional array by .push() and .splice() methods
+
+activities.push(['Programming', 2])
+activities.splice(2, 0, ['Sleep', 1])
+
+console.table(activities);
+
+// Array.join() Method
+// This method is used to convert the array into string by using separator.
