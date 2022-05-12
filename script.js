@@ -270,4 +270,11 @@ activities.splice(2, 0, ['Sleep', 1])
 console.table(activities);
 
 // Array.join() Method
-// This method is used to convert the array into string by using separator.
+// This method is used to convert the array into string by using separator for e.g.:-
+
+const cssClasses = ['btn', 'btn-primary', 'btn-active'];
+const classes = cssClasses.join(',')  // comma in the bracket is called a separator
+
+console.log(classes)
+
+// ES6 Destructuring Assignment
